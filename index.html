@@ -73,6 +73,22 @@
     box-shadow: 0 0 0 20px rgba(0, 150, 200, 0.2);
   }
 }
+
+.control{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  font-family: cursive;
+  opacity: 40%;
+  font-size: larger;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.control:hover{
+  opacity: 100%;
+}
     </style>
 </head>
 
@@ -86,6 +102,9 @@
     </div>
     <div style="padding-top: 110px;">
         <img id="maingif" style="display: block;margin: auto;background-color: hsl(0, 0%, 90%);" src="calm.gif=w1080">
+    </div>
+    <div class="control">
+      Pause / Play
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -101,7 +120,7 @@
 
 	if(full_screen_element !== null)
 		console.log('Page has entered fullscreen mode');
-	else{        
+	else{
             setTimeout(function(){
              $('#popUpMain').css('display','block'); }, 0000);
            $('.submitId').click(function(){
@@ -112,6 +131,10 @@
            });
       }
   });
+
+  $('.control').click(function(){
+    $('#popUpMain').css('display','block');
+   });
 
    const isMobile = function(){
    const match = window.matchMedia('(pointer:coarse)');
