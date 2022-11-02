@@ -23,11 +23,11 @@
 
 #popup{
   width: 500px; /*25rem*/
-  height: 250px; /*23.125rem*/
+  height: 560px; /*23.125rem*/
   background-color: #C06E5D;
   background-size:contain;
   position: absolute;
-  top: 45%;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 1px 2px 5px 3px rgb(32, 32, 32);
@@ -35,7 +35,7 @@
 }
 
 @media (max-width:500px){
-  #popup{width: 320px; height: 310px;}
+  #popup{width: 320px; height: 600px;}
 }
 
 #Heading{
@@ -47,7 +47,7 @@
 }
 
 .submitId{
-  margin-top: -6px;
+  margin-top: 23px;
   background-color: #6afaff;
   border: none;
   font-family: 'Courier New', Courier, monospace;
@@ -70,43 +70,54 @@
     box-shadow: 0 0 0 0px rgba(0, 150, 200, 0.8);
   }
   100% {
-    box-shadow: 0 0 0 30px rgba(0, 150, 200, 0.2);
+    box-shadow: 0 0 0 20px rgba(0, 150, 200, 0.2);
   }
 }
     </style>
 </head>
 
-<body style="background: #2a2826;overflow: hidden;">
+<body onload="btnclick()" style="background: #2a2826;overflow: hidden;">
     <div id="popUpMain">
         <div id="popup">
-          <h1 id="Heading">YOU ARE ABOUT TO ENTER ZEN MODE</h1>
-          <button class="submitId" onclick="playAudio('https://cf-media.sndcdn.com/56FsAoyIRZTN.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vNTZGc0FveUlSWlROLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjY3NDE2NTUwfX19XX0_&Signature=ABR9uiZ8U66iCWRAk6KjfOhTFBP~zWJj3Ys8L1VHBOqpzZK9X0Mkm8ZqQnaU4wHT3MQ6Jzi~IVsJELL3NIsofBEvq4tOlclOfP3CUOuU81hNpsKtmkNtqa-MzepaosKKYlFO9FS8064aNb-RlwmctiLHbp2dHMAkJ-s8gEzoMv3gg3jcelxKvExeoS~flYNXHkmH5QszP3nJyhXOcc-K49VKxJelHguzMwh-KL3sPIOFSTb211qJY-wv1aut5~acLXTr81f5OFkWU6LbG7P7u2zSO66dMCFGQ3lDjKTAvbTxr4k5MOFvo7oKgm0XpKPtgPeTHjgPENyoSr4WmXqkEA__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ')">GOT IT!</button>
+          <h1 id="Heading">PRESS PLAY TO ENTER INTO ZEN MODE</h1>
+          <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1521320953&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>
+          <button class="submitId">GOT IT!</button>
         </div>
     </div>
     <div style="padding-top: 110px;">
         <img id="maingif" style="display: block;margin: auto;background-color: hsl(0, 0%, 90%);" src="calm.gif=w1080">
     </div>
-    <!--<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1521320953&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/sundaram-kumar-451676703" title="Sundaram Kumar" target="_blank" style="color: #cccccc; text-decoration: none;">Sundaram Kumar</a> · <a href="https://soundcloud.com/sundaram-kumar-451676703/sets/lofi" title="Lofi" target="_blank" style="color: #cccccc; text-decoration: none;">Lofi</a></div>-->
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-
    $('.submitId').click(function(){
     $('#popUpMain').css('display','none');
     document.documentElement.requestFullscreen().catch((e) => {
        console.log(e);
     })
    });
+   document.addEventListener('fullscreenchange', function() {
+	var full_screen_element = document.fullscreenElement;
+
+	if(full_screen_element !== null)
+		console.log('Page has entered fullscreen mode');
+	else{        
+            setTimeout(function(){
+             $('#popUpMain').css('display','block'); }, 0000);
+           $('.submitId').click(function(){
+            $('#popUpMain').css('display','none');
+            document.documentElement.requestFullscreen().catch((e) => {
+               console.log(e);
+            })
+           });
+      }
+  });
 
    const isMobile = function(){
    const match = window.matchMedia('(pointer:coarse)');
    return (match && match.matches);
    }
    console.log(`${isMobile() ? document.getElementById("maingif").src = "calm.gif" : 'Not Mobile'}`);
-
-   function playAudio(url) {
-   new Audio(url).play();
-   }
 </script>
 
 </html>
