@@ -164,7 +164,6 @@
    });
 
    var ifmobile = 0;
-   var firsttime = 0;
 
    const isMobile = function(){
    const match = window.matchMedia('(pointer:coarse)');
@@ -184,17 +183,11 @@
       imagesrc.src = "Zen1.gif";
       else
       imagesrc.src = "Calm1.gif";
-      if(firsttime == 0){
       $('#spinner').css('display','inline');
       setTimeout(function(){ 
         document.body.style.backgroundColor = "#1f1f21"; 
         document.getElementById("popUpMain").style.backgroundColor = "#1f1f21";
         $('#spinner').css('display','none');}, 1000);
-      }
-      else{
-        document.body.style.backgroundColor = "#1f1f21";
-        document.getElementById("popUpMain").style.backgroundColor = "#1f1f21";
-      }
       imageflag = 2;
     }
     else if(imageflag == 2){
@@ -202,17 +195,11 @@
       imagesrc.src = "Zen2.gif";
       else
       imagesrc.src = "Calm2.gif";
-      if(firsttime == 0){
       $('#spinner').css('display','inline');
       setTimeout(function(){ 
         document.body.style.backgroundColor = "black"; 
         document.getElementById("popUpMain").style.backgroundColor = "black";
         $('#spinner').css('display','none');}, 1000);
-      }
-      else{
-        document.body.style.backgroundColor = "black";
-        document.getElementById("popUpMain").style.backgroundColor = "black";
-      }
       imageflag = 3;
     }
     else if(imageflag == 3){
@@ -220,17 +207,11 @@
       imagesrc.src = "Zen3.gif";
       else
       imagesrc.src = "Calm3.gif";
-      if(firsttime == 0){
       $('#spinner').css('display','inline');
       setTimeout(function(){ 
         document.body.style.backgroundColor = "#16141c"; 
         document.getElementById("popUpMain").style.backgroundColor = "#16141c";
         $('#spinner').css('display','none');}, 1000);
-      }
-      else{
-        document.body.style.backgroundColor = "#16141c";
-        document.getElementById("popUpMain").style.backgroundColor = "#16141c";
-      }
       imageflag = 4;
     }
     else if(imageflag == 4){
@@ -238,17 +219,11 @@
       imagesrc.src = "Zen4.gif";
       else
       imagesrc.src = "Calm4.gif";
-      if(firsttime == 0){
       $('#spinner').css('display','inline');
       setTimeout(function(){ 
         document.body.style.backgroundColor = "black"; 
         document.getElementById("popUpMain").style.backgroundColor = "black";
         $('#spinner').css('display','none');}, 1000);
-      }
-      else{
-        document.body.style.backgroundColor = "black";
-        document.getElementById("popUpMain").style.backgroundColor = "black";
-      }
       imageflag = 5;
     }
     else if(imageflag == 5){
@@ -256,17 +231,11 @@
       imagesrc.src = "Zen5.gif";
       else
       imagesrc.src = "Calm5.gif";
-      if(firsttime == 0){
       $('#spinner').css('display','inline');
       setTimeout(function(){ 
         document.body.style.backgroundColor = "#555555"; 
         document.getElementById("popUpMain").style.backgroundColor = "#555555";
         $('#spinner').css('display','none');}, 1000);
-      }
-      else{
-        document.body.style.backgroundColor = "#555555";
-        document.getElementById("popUpMain").style.backgroundColor = "#555555";
-      }
       imageflag = 6;
     }
     else if(imageflag == 6){
@@ -274,19 +243,12 @@
       imagesrc.src = "Zen.gif";
       else
       imagesrc.src = "Calm.gif";
-      if(firsttime == 0){
       $('#spinner').css('display','inline');
       setTimeout(function(){ 
         document.body.style.backgroundColor = "#2a2826"; 
         document.getElementById("popUpMain").style.backgroundColor = "#2a2826";
         $('#spinner').css('display','none');}, 1000);
-      }
-      else{
-        document.body.style.backgroundColor = "#2a2826";
-        document.getElementById("popUpMain").style.backgroundColor = "#2a2826";
-      }
       imageflag = 1;
-      firsttime = 1;
     }
    }
 </script>
