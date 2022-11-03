@@ -91,10 +91,25 @@
   cursor: pointer;
 }
 
+.changenext{
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-family: cursive;
+  opacity: 40%;
+  font-size: large;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
 .control:hover{
   opacity: 100%;
 }
 
+.changenext:hover{
+  opacity: 100%;
+}
 
     </style>
 </head>
@@ -108,10 +123,13 @@
         </div>
     </div>
     <div style="padding-top: 110px;">
-        <img id="maingif" style="display: block;margin: auto;background-color: hsl(0, 0%, 90%);" src="calm.gif=w1080">
+        <img id="maingif" style="display: block;margin: auto;background-color: hsl(0, 0%, 90%);" src="Zen.gif">
     </div>
     <div class="control">
       Pause / Play / Change
+    </div>
+    <div class="changenext" onclick="changenext()">
+      Change Animation
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -144,15 +162,76 @@
     $('#popUpMain').css('display','block');
    });
 
+   var ifmobile = 0;
+
    const isMobile = function(){
    const match = window.matchMedia('(pointer:coarse)');
    return (match && match.matches);
    }
    console.log(`${isMobile() ? mobiledetected() : 'Not Mobile'}`);
    function mobiledetected(){
-    document.getElementById("maingif").src = "calm.gif";
+    ifmobile = 1;
+    document.getElementById("maingif").src = "Calm.gif";
    }
    
+   var imageflag = 1;
+   function changenext(){
+    var imagesrc = document.getElementById("maingif");
+    if(imageflag == 1){
+      if(ifmobile == 0)
+      imagesrc.src = "Zen1.gif";
+      else
+      imagesrc.src = "Calm1.gif";
+      document.body.style.backgroundColor = "#1f1f21";
+      document.getElementById("popUpMain").style.backgroundColor = "#1f1f21";
+      imageflag = 2;
+    }
+    else if(imageflag == 2){
+      if(ifmobile == 0)
+      imagesrc.src = "Zen2.gif";
+      else
+      imagesrc.src = "Calm2.gif";
+      document.body.style.backgroundColor = "black";
+      document.getElementById("popUpMain").style.backgroundColor = "black";
+      imageflag = 3;
+    }
+    else if(imageflag == 3){
+      if(ifmobile == 0)
+      imagesrc.src = "Zen3.gif";
+      else
+      imagesrc.src = "Calm3.gif";
+      document.body.style.backgroundColor = "#16141c";
+      document.getElementById("popUpMain").style.backgroundColor = "#16141c";
+      imageflag = 4;
+    }
+    else if(imageflag == 4){
+      if(ifmobile == 0)
+      imagesrc.src = "Zen4.gif";
+      else
+      imagesrc.src = "Calm4.gif";
+      document.body.style.backgroundColor = "black";
+      document.getElementById("popUpMain").style.backgroundColor = "black";
+      imageflag = 5;
+    }
+    else if(imageflag == 5){
+      if(ifmobile == 0)
+      imagesrc.src = "Zen5.gif";
+      else
+      imagesrc.src = "Calm5.gif";
+      document.body.style.backgroundColor = "#555555";
+      document.getElementById("popUpMain").style.backgroundColor = "#555555";
+      imageflag = 6;
+    }
+    else if(imageflag == 6){
+      if(ifmobile == 0)
+      imagesrc.src = "Zen.gif";
+      else
+      imagesrc.src = "Calm.gif";
+      document.body.style.backgroundColor = "#2a2826";
+      document.getElementById("popUpMain").style.backgroundColor = "#2a2826";
+      imageflag = 1;
+    }
+   }
 </script>
 
 </html>
