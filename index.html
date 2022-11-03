@@ -164,6 +164,7 @@
    });
 
    var ifmobile = 0;
+   var timeint = 1000;
 
    const isMobile = function(){
    const match = window.matchMedia('(pointer:coarse)');
@@ -187,7 +188,7 @@
       setTimeout(function(){ 
         document.body.style.backgroundColor = "#1f1f21"; 
         document.getElementById("popUpMain").style.backgroundColor = "#1f1f21";
-        $('#spinner').css('display','none');}, 1000);
+        $('#spinner').css('display','none');}, timeint);
       imageflag = 2;
     }
     else if(imageflag == 2){
@@ -199,7 +200,7 @@
       setTimeout(function(){ 
         document.body.style.backgroundColor = "black"; 
         document.getElementById("popUpMain").style.backgroundColor = "black";
-        $('#spinner').css('display','none');}, 1000);
+        $('#spinner').css('display','none');}, timeint);
       imageflag = 3;
     }
     else if(imageflag == 3){
@@ -211,7 +212,7 @@
       setTimeout(function(){ 
         document.body.style.backgroundColor = "#16141c"; 
         document.getElementById("popUpMain").style.backgroundColor = "#16141c";
-        $('#spinner').css('display','none');}, 1000);
+        $('#spinner').css('display','none');}, timeint);
       imageflag = 4;
     }
     else if(imageflag == 4){
@@ -223,7 +224,7 @@
       setTimeout(function(){ 
         document.body.style.backgroundColor = "black"; 
         document.getElementById("popUpMain").style.backgroundColor = "black";
-        $('#spinner').css('display','none');}, 1000);
+        $('#spinner').css('display','none');}, timeint);
       imageflag = 5;
     }
     else if(imageflag == 5){
@@ -235,7 +236,7 @@
       setTimeout(function(){ 
         document.body.style.backgroundColor = "#555555"; 
         document.getElementById("popUpMain").style.backgroundColor = "#555555";
-        $('#spinner').css('display','none');}, 1000);
+        $('#spinner').css('display','none');}, timeint);
       imageflag = 6;
     }
     else if(imageflag == 6){
@@ -247,8 +248,9 @@
       setTimeout(function(){ 
         document.body.style.backgroundColor = "#2a2826"; 
         document.getElementById("popUpMain").style.backgroundColor = "#2a2826";
-        $('#spinner').css('display','none');}, 1000);
+        $('#spinner').css('display','none');}, timeint);
       imageflag = 1;
+      timeint = 500;
     }
    }
 </script>
