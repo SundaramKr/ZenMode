@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
 #popUpMain{
   position: fixed;
@@ -129,7 +130,7 @@
       Pause / Play / Change
     </div>
     <div class="changenext" onclick="changenext()">
-      Change Animation
+      Change Animation <i class="fa fa-spinner" aria-hidden="true" id="spinner" style="display: none;"></i>
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -163,6 +164,7 @@
    });
 
    var ifmobile = 0;
+   var firsttime = 0;
 
    const isMobile = function(){
    const match = window.matchMedia('(pointer:coarse)');
@@ -182,8 +184,17 @@
       imagesrc.src = "Zen1.gif";
       else
       imagesrc.src = "Calm1.gif";
-      document.body.style.backgroundColor = "#1f1f21";
-      document.getElementById("popUpMain").style.backgroundColor = "#1f1f21";
+      if(firsttime == 0){
+      $('#spinner').css('display','inline');
+      setTimeout(function(){ 
+        document.body.style.backgroundColor = "#1f1f21"; 
+        document.getElementById("popUpMain").style.backgroundColor = "#1f1f21";
+        $('#spinner').css('display','none');}, 1000);
+      }
+      else{
+        document.body.style.backgroundColor = "#1f1f21";
+        document.getElementById("popUpMain").style.backgroundColor = "#1f1f21";
+      }
       imageflag = 2;
     }
     else if(imageflag == 2){
@@ -191,8 +202,17 @@
       imagesrc.src = "Zen2.gif";
       else
       imagesrc.src = "Calm2.gif";
-      document.body.style.backgroundColor = "black";
-      document.getElementById("popUpMain").style.backgroundColor = "black";
+      if(firsttime == 0){
+      $('#spinner').css('display','inline');
+      setTimeout(function(){ 
+        document.body.style.backgroundColor = "black"; 
+        document.getElementById("popUpMain").style.backgroundColor = "black";
+        $('#spinner').css('display','none');}, 1000);
+      }
+      else{
+        document.body.style.backgroundColor = "black";
+        document.getElementById("popUpMain").style.backgroundColor = "black";
+      }
       imageflag = 3;
     }
     else if(imageflag == 3){
@@ -200,8 +220,17 @@
       imagesrc.src = "Zen3.gif";
       else
       imagesrc.src = "Calm3.gif";
-      document.body.style.backgroundColor = "#16141c";
-      document.getElementById("popUpMain").style.backgroundColor = "#16141c";
+      if(firsttime == 0){
+      $('#spinner').css('display','inline');
+      setTimeout(function(){ 
+        document.body.style.backgroundColor = "#16141c"; 
+        document.getElementById("popUpMain").style.backgroundColor = "#16141c";
+        $('#spinner').css('display','none');}, 1000);
+      }
+      else{
+        document.body.style.backgroundColor = "#16141c";
+        document.getElementById("popUpMain").style.backgroundColor = "#16141c";
+      }
       imageflag = 4;
     }
     else if(imageflag == 4){
@@ -209,8 +238,17 @@
       imagesrc.src = "Zen4.gif";
       else
       imagesrc.src = "Calm4.gif";
-      document.body.style.backgroundColor = "black";
-      document.getElementById("popUpMain").style.backgroundColor = "black";
+      if(firsttime == 0){
+      $('#spinner').css('display','inline');
+      setTimeout(function(){ 
+        document.body.style.backgroundColor = "black"; 
+        document.getElementById("popUpMain").style.backgroundColor = "black";
+        $('#spinner').css('display','none');}, 1000);
+      }
+      else{
+        document.body.style.backgroundColor = "black";
+        document.getElementById("popUpMain").style.backgroundColor = "black";
+      }
       imageflag = 5;
     }
     else if(imageflag == 5){
@@ -218,8 +256,17 @@
       imagesrc.src = "Zen5.gif";
       else
       imagesrc.src = "Calm5.gif";
-      document.body.style.backgroundColor = "#555555";
-      document.getElementById("popUpMain").style.backgroundColor = "#555555";
+      if(firsttime == 0){
+      $('#spinner').css('display','inline');
+      setTimeout(function(){ 
+        document.body.style.backgroundColor = "#555555"; 
+        document.getElementById("popUpMain").style.backgroundColor = "#555555";
+        $('#spinner').css('display','none');}, 1000);
+      }
+      else{
+        document.body.style.backgroundColor = "#555555";
+        document.getElementById("popUpMain").style.backgroundColor = "#555555";
+      }
       imageflag = 6;
     }
     else if(imageflag == 6){
@@ -227,9 +274,19 @@
       imagesrc.src = "Zen.gif";
       else
       imagesrc.src = "Calm.gif";
-      document.body.style.backgroundColor = "#2a2826";
-      document.getElementById("popUpMain").style.backgroundColor = "#2a2826";
+      if(firsttime == 0){
+      $('#spinner').css('display','inline');
+      setTimeout(function(){ 
+        document.body.style.backgroundColor = "#2a2826"; 
+        document.getElementById("popUpMain").style.backgroundColor = "#2a2826";
+        $('#spinner').css('display','none');}, 1000);
+      }
+      else{
+        document.body.style.backgroundColor = "#2a2826";
+        document.getElementById("popUpMain").style.backgroundColor = "#2a2826";
+      }
       imageflag = 1;
+      firsttime = 1;
     }
    }
 </script>
